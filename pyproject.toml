@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jonascript"
+version = "0.0.1"
+authors = [
+  { name="Jonathan Dück", email="jonathan.dueck@digital-confidence.de" },
+]
+description = "Utils for using python instead of BASH"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/TheUltimateOptimist/jonascript"
+"Bug Tracker" = "https://github.com/TheUltimateOptimist/jonascript/issues"
