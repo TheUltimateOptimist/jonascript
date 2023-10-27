@@ -1,1 +1,1 @@
-from jonascript import *
+from .jonascript import *
