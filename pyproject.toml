@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "jonascript"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="Jonathan Dück", email="jonathan.dueck@digital-confidence.de" },
 ]

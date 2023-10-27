@@ -3,5 +3,5 @@
 ```pip install twine```  
 ```python3 -m build```  
 ```twine upload dist/*```  
-Username: TheUltimateOptimist  
+Username: __token__  
 Password: see Dashlane
