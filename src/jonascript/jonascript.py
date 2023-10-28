@@ -9,10 +9,7 @@ class Output:
     returncode: int
 
     def list(self) -> list[str]:
-
         return self.data.split("\n")
-    def stringlist(input: str) -> list[str]:
-        return input.split("\n")
 
 def cmd(command: str) -> Output:
     # if i try to capture stderr as well by doing stderr=subropcess.PIPE as well
