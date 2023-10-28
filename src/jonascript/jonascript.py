@@ -16,7 +16,7 @@ def _cmd(command: Union[str, 'Command'], show_output: bool) -> Output:
     # or using capture_output=True, fzf is not shown in the terminal
     output = subprocess.run(command.command if type(command) is Command else command, shell=True, stdout=subprocess.PIPE)
     if show_output:
-        print(output.stdout.decode())
+        print(output.stdout.decode().strip())
     return Output(output.args, output.stdout.decode().strip(), output.returncode)
 
 def cmd(command: Union[str, 'Command']) -> Output:
