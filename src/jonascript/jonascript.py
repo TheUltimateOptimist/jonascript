@@ -18,3 +18,11 @@ def cmd(command: str) -> Output:
     return Output(output.args, output.stdout.decode().strip(), output.returncode)
 
 HOME = cmd("echo $HOME").data
+"""
+equivalent to bashe's $HOME, e.g. '/home/dev'
+"""
+
+WINDOW = cmd("xprop -root | awk 'NR==1{print $NF}'").data
+"""
+id of the focused window, e.g. '0x2000001'
+"""
