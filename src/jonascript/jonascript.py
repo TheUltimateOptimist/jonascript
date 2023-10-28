@@ -16,3 +16,5 @@ def cmd(command: str) -> Output:
     # or using capture_output=True, fzf is not shown in the terminal
     output = subprocess.run(command, shell=True, stdout=subprocess.PIPE)
     return Output(output.args, output.stdout.decode().strip(), output.returncode)
+
+HOME = cmd("echo $HOME").data
