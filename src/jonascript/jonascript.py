@@ -51,6 +51,7 @@ equivalent to bash's $HOME, e.g. '/home/dev'
 """
 
 WINDOW = Command("xprop -root")\
+    .pipe("grep _NET_ACTIVE_WINDOW")\
     .pipe("awk 'NR==1{print $NF}'")\
     .exec()\
     .data
