@@ -22,6 +22,24 @@ def _cmd(command: Union[str, 'Command'], show_output: bool) -> Output:
 def cmd(command: Union[str, 'Command']) -> Output:
     return _cmd(command, False)
 
+def _scmd(command: Union[str, 'Command'], error_message: str | None = None, show_output: bool = False) -> str:
+    output = _cmd(command, show_output)
+    if output.returncode:
+        if error_message is None:
+            command_text = command.command if isinstance(command, Command) else command
+            error_message = f"The command '{command_text}' failed!"
+        print(f"\033[91m{error_message}\033[0m") # red text 
+        raise Exception(error_message)
+    else:
+        return output.data
+
+def scmd(command: Union[str, 'Command'], error_message: str | None = None) -> str:
+    return _scmd(command, error_message, False)
+
+def scmdp(command: Union[str, 'Command'], error_message: str | None = None) -> str:
+    return _scmd(command, error_message, True)
+
+
 def cmdp(command: Union[str, 'Command']) -> Output:
     return _cmd(command, True)
 
