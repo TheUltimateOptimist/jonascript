@@ -14,7 +14,7 @@ class Output:
 def _cmd(command: Union[str, 'Command'], show_output: bool) -> Output:
     # if i try to capture stderr as well by doing stderr=subropcess.PIPE as well
     # or using capture_output=True, fzf is not shown in the terminal
-    output = subprocess.run(command.command if type(command) is Command else command, shell=True, stdout=subprocess.PIPE)
+    output = subprocess.run(command.command if isinstance(command, Command) else command, shell=True, stdout=subprocess.PIPE)
     if show_output:
         print(output.stdout.decode().strip())
     return Output(output.args, output.stdout.decode().strip(), output.returncode)
